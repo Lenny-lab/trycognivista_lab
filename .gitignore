@@ -1,0 +1,36 @@
+# ===== 敏感信息（严禁提交）=====
+# API Key 导出文件（阿里云百炼等）
+*apiKey*.csv
+默认业务空间-apiKey-*.csv
+# 环境变量（.env.local.example 模板除外）
+.env
+.env.*
+!.env.local.example
+!.env.example
+
+# ===== 本地临时 / 工作目录 =====
+.final_audit_tmp/
+.pdf_consistency_tmp/
+.pdf_edit_tmp/
+.references_tmp/
+tmp/
+temp/
+
+# ===== 依赖与构建产物 =====
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+
+# ===== 运行时生成的数据 =====
+src/data/kb-uploads.json
+
+# ===== 操作系统 / 编辑器 =====
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.vscode/
+.idea/
+*.swp
