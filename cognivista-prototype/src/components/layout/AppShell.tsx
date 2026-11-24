@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import {
@@ -42,12 +43,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             className="flex items-center gap-3 shrink-0 apple-focus rounded-xl py-1"
           >
             <span className="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 36 36" fill="none">
-                <circle cx="18" cy="18" r="3.2" fill="currentColor" />
-                <ellipse cx="18" cy="18" rx="15" ry="6.8" stroke="currentColor" strokeWidth="1.4" transform="rotate(-32 18 18)" />
-                <ellipse cx="18" cy="18" rx="15" ry="6.8" stroke="currentColor" strokeWidth="1.4" transform="rotate(32 18 18)" opacity=".55" />
-                <circle cx="30.2" cy="10.1" r="2" fill="currentColor" />
-              </svg>
+              <Image
+                src="/brand/cognivista-mark.svg"
+                alt=""
+                width={36}
+                height={36}
+                priority
+                unoptimized
+              />
             </span>
             <div className="flex items-baseline gap-2">
               <span className="text-[18px] font-semibold tracking-tight">CogniVista</span>
@@ -182,7 +185,16 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           />
           <div className="relative w-80 max-w-[85vw] h-full apple-glass-sheet p-6 flex flex-col">
             <div className="flex items-center justify-between pb-5 border-b border-[var(--border-hairline)]">
-              <span className="text-[18px] font-semibold">CogniVista 观睿</span>
+              <span className="flex items-center gap-2.5">
+                <Image
+                  src="/brand/cognivista-mark.svg"
+                  alt=""
+                  width={30}
+                  height={30}
+                  unoptimized
+                />
+                <span className="text-[18px] font-semibold">CogniVista 观睿</span>
+              </span>
               <button
                 onClick={() => setMobileOpen(false)}
                 className="p-2 rounded-full hover:bg-black/[0.06] dark:hover:bg-white/[0.1]"

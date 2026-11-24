@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">CogniVista 观睿标志</title>
+  <desc id="desc">五枚渐变光圈叶片组成字母 C，中央白色折线构成字母 V，象征跨学科认知与突破边界的洞察力。</desc>
+  <defs>
+    <linearGradient id="bg" x1="9" y1="5" x2="56" y2="61" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#182044"/>
+      <stop offset="0.52" stop-color="#0C1230"/>
+      <stop offset="1" stop-color="#070A18"/>
+    </linearGradient>
+    <linearGradient id="spectrum" x1="13" y1="12" x2="53" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B79CFF"/>
+      <stop offset="0.38" stop-color="#767BFF"/>
+      <stop offset="0.72" stop-color="#3698FF"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="v-light" x1="24" y1="22" x2="41" y2="43" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#DDF8FF"/>
+    </linearGradient>
+    <radialGradient id="aura" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(37 37) rotate(130) scale(29)">
+      <stop stop-color="#397BFF" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#397BFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft-glow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#bg)"/>
+  <rect x="2.75" y="2.75" width="58.5" height="58.5" rx="17.25" stroke="white" stroke-opacity="0.14" stroke-width="1.5"/>
+  <path d="M12 3.5H52C57.8 3.5 60.5 8.1 60.5 14" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="3" y="3" width="58" height="58" rx="17" fill="url(#aura)"/>
+
+  <g fill="url(#spectrum)">
+    <path d="M53.326 23.384A23 23 0 0 1 53.326 40.616L44.612 35.145A13 13 0 0 0 44.612 28.855Z" transform="rotate(60 32 32)"/>
+    <path d="M53.326 23.384A23 23 0 0 1 53.326 40.616L44.612 35.145A13 13 0 0 0 44.612 28.855Z" transform="rotate(120 32 32)"/>
+    <path d="M53.326 23.384A23 23 0 0 1 53.326 40.616L44.612 35.145A13 13 0 0 0 44.612 28.855Z" transform="rotate(180 32 32)"/>
+    <path d="M53.326 23.384A23 23 0 0 1 53.326 40.616L44.612 35.145A13 13 0 0 0 44.612 28.855Z" transform="rotate(240 32 32)"/>
+    <path d="M53.326 23.384A23 23 0 0 1 53.326 40.616L44.612 35.145A13 13 0 0 0 44.612 28.855Z" transform="rotate(300 32 32)"/>
+  </g>
+
+  <path d="M23.5 25L32.5 42L45 21.5" stroke="url(#v-light)" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-glow)"/>
+  <circle cx="48.5" cy="16.5" r="2.25" fill="#75E6FF"/>
+  <circle cx="48.5" cy="16.5" r="4.25" stroke="#75E6FF" stroke-opacity="0.25"/>
+</svg>
