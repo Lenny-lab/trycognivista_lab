@@ -3,7 +3,8 @@ chcp 65001 >nul
 setlocal enabledelayedexpansion
 
 set "ROOT=%~dp0"
-set "APP_DIR=%ROOT%cognivista-prototype"
+rem 脚本已移入项目目录内，ROOT 即项目根，无需再拼接子目录
+set "APP_DIR=%ROOT%"
 set "PORT=3000"
 set "URL=http://localhost:%PORT%/"
 

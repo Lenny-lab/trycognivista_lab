@@ -30,7 +30,7 @@ npm install
 npm run dev        # http://localhost:3000
 ```
 
-Windows 用户可直接双击仓库根目录的 `开启.bat`（自动安装依赖、启动服务并打开浏览器），`关闭.bat` 一键停止。
+Windows 用户可直接双击 `cognivista-prototype/开启.bat`（自动安装依赖、启动服务并打开浏览器），`关闭.bat` 一键停止。
 
 ### 大模型配置（可选）
 
@@ -60,22 +60,24 @@ Windows 用户可直接双击仓库根目录的 `开启.bat`（自动安装依�
 ## 仓库结构
 
 ```
-├── cognivista-prototype/     # 原型系统（Next.js App Router）
+├── cognivista-prototype/     # 原型系统（工程代码，Next.js App Router）
 │   ├── src/app/             #   页面路由 + API 服务端路由
 │   ├── src/components/      #   五大视图组件
 │   ├── src/lib/             #   BM25 检索引擎 / LLM 客户端 / 提示词
-│   └── src/data/            #   12 学科知识库 + 演示数据集
-├── figures/                 # 报告插图
-├── CogniVista观睿_工程管理期末大作业.tex   # 课程报告 LaTeX 源码
-├── CogniVista观睿_工程管理报告.pdf         # 课程报告（最终版）
-└── CogniVista观睿_原型系统技术开发文档.md  # 原型系统技术文档
+│   ├── src/data/            #   12 学科知识库 + 演示数据集
+│   └── 开启.bat / 关闭.bat   #   Windows 一键启停脚本
+└── docs/                     # 课程文档（报告与开发文档）
+    ├── CogniVista观睿_工程管理期末大作业.tex   # 课程报告 LaTeX 源码
+    ├── CogniVista观睿_工程管理报告.pdf         # 课程报告（最终版）
+    ├── CogniVista观睿_原型系统技术开发文档.md  # 原型系统技术文档
+    └── figures/                              # 报告插图
 ```
 
 ## 相关文档
 
 - [原型系统运行指南](cognivista-prototype/README.md)
-- [原型系统技术开发文档](CogniVista观睿_原型系统技术开发文档.md)
-- [工程管理课程报告（PDF）](CogniVista观睿_工程管理报告.pdf)
+- [原型系统技术开发文档](docs/CogniVista观睿_原型系统技术开发文档.md)
+- [工程管理课程报告（PDF）](docs/CogniVista观睿_工程管理报告.pdf)
 
 ## 许可证
 
