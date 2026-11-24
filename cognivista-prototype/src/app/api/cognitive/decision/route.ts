@@ -6,6 +6,10 @@ import { callDeepSeekChatJson, resolveDeepSeekKey } from "@/lib/deepseek";
 import { getDecisionDemoFallback } from "@/data/demo-presets";
 import type { DecisionResponse } from "@/lib/types";
 
+// Serverless 函数最长执行时长（秒）：Vercel Hobby 档上限 60s，
+// 默认值仅 10s 不足以覆盖 LLM 推理耗时，必须显式声明避免请求被平台截断
+export const maxDuration = 60;
+
 const RequestSchema = z.object({
   dilemma: z.string().min(4, "请简要描述你的决策情境").max(1000),
   options: z

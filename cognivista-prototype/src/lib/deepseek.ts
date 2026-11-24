@@ -17,6 +17,10 @@ const LLM_ENABLE_THINKING = (() => {
   return undefined;
 })();
 
+// 客户端单次请求超时：压在 Vercel 函数 60s 硬上限之内（55s），
+// 确保超时先由本端触发、路由层得以平滑回退 Demo 模式，而不是被平台硬杀后向浏览器返回 504
+const LLM_TIMEOUT_MS = 55000;
+
 type ThinkingAwareBody = OpenAI.ChatCompletionCreateParamsNonStreaming & {
   enable_thinking?: boolean;
 };
@@ -65,7 +69,7 @@ export async function callDeepSeekChatJson<T>(options: {
   const client = new OpenAI({
     apiKey: options.apiKey,
     baseURL: LLM_BASE_URL,
-    timeout: 90000,
+    timeout: LLM_TIMEOUT_MS,
     maxRetries: 0,
   });
 
@@ -99,7 +103,7 @@ export async function callDeepSeekReasonerJson<T>(options: {
   const client = new OpenAI({
     apiKey: options.apiKey,
     baseURL: LLM_BASE_URL,
-    timeout: 90000,
+    timeout: LLM_TIMEOUT_MS,
     maxRetries: 0,
   });
 

@@ -6,6 +6,10 @@ import { callDeepSeekReasonerJson, resolveDeepSeekKey } from "@/lib/deepseek";
 import { getSocraticDemoFallback } from "@/data/demo-presets";
 import type { SocraticResponse } from "@/lib/types";
 
+// Serverless 函数最长执行时长（秒）：Vercel Hobby 档上限 60s，
+// 默认值仅 10s 不足以覆盖 LLM 推理耗时，必须显式声明避免请求被平台截断
+export const maxDuration = 60;
+
 const RequestSchema = z.object({
   thesis: z.string().min(4, "请输入至少 4 个字的核心观点或论证").max(2000),
   previousRoundContext: z.string().max(2000).optional(),

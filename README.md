@@ -39,6 +39,24 @@ Windows 用户可直接双击仓库根目录的 `开启.bat`（自动安装依�
 1. **界面热配置**：启动后点击右上角「演示模式 (点击配置 Key)」，输入你的 API Key，仅存于浏览器本地；
 2. **服务端环境变量**：复制 `cognivista-prototype/.env.local.example` 为 `.env.local` 并按注释填写（支持 DeepSeek 官方及任意 OpenAI 兼容端点）。
 
+## 部署到 Vercel
+
+推荐通过 GitHub 导入本仓库实现「GitHub 推送即自动部署」，要点如下：
+
+1. **Root Directory 必须设为 `cognivista-prototype`**（原型系统位于子目录，其余为课程报告文件）；
+2. 在 Project Settings → Environment Variables 配置大模型接入（全部可选，零 Key 时自动启用内置 Demo 模式）：
+
+   | 变量 | 说明 |
+   |---|---|
+   | `DEEPSEEK_API_KEY` | API Key（DeepSeek 官方或任意 OpenAI 兼容服务） |
+   | `LLM_BASE_URL` | 兼容端点地址（默认 `https://api.deepseek.com`） |
+   | `LLM_CHAT_MODEL` / `LLM_REASONER_MODEL` | 对话 / 推理模型名 |
+   | `LLM_ENABLE_THINKING` | 思维链开关，长提示场景建议 `false`（详见 `.env.local.example` 注释） |
+
+3. 三个认知 API 路由已声明 `maxDuration = 60`（Hobby 档函数时长上限），LLM 客户端超时相应压至 55s —— 超时由应用自身触发并平滑回退 Demo 模式，而非被平台硬杀返回 504；
+4. **已知限制**：Serverless 文件系统只读，知识库拖拽上传仅存活于当前函数实例内存（冷启动 / 重启后丢失，12 学科内置语料不受影响）；Hobby 档函数部署在海外区域，调用境内模型端点会额外增加约 1–2s 网络延迟；
+5. **自定义域名**：Vercel 自动签发 SSL 证书；流量由海外节点直接回源、不构成境内接入，通常无需 ICP 备案（若日后叠加境内 CDN / 加速节点则必须备案，且域名需在工信部批复后缀列表内并转入境内注册商）。
+
 ## 仓库结构
 
 ```
